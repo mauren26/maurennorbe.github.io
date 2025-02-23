@@ -86,33 +86,30 @@
             </div>
             <div class="certifications">
                 <h3>Certifications</h3>
-                <div class="certification-images">
-                    <img src="cert_1.png" alt="Certification 1" onclick="openModal()">
-                    <img src="cert_2.png" alt="Certification 2" onclick="openModal()">
-                    <img src="cert_comphard.png" alt="Certification 3" onclick="openModal()">
-                    <img src="cert_cyber.png" alt="Certification 4" onclick="openModal()">
+                <div class="certification-slider">
+                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <div class="certification-images">
+                        <img class="cert-slide" src="cert_1.png" alt="Certification 1">
+                        <img class="cert-slide" src="cert_2.png" alt="Certification 2">
+                        <img class="cert-slide" src="cert_comphard.png" alt="Certification 3">
+                        <img class="cert-slide" src="cert_cyber.png" alt="Certification 4">
+                    </div>
+                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="modal" id="certModal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <img src="cert_1.png" alt="Certification 1">
-            <img src="cert_2.png" alt="Certification 2">
-            <img src="cert_comphard.png" alt="Certification 3">
-            <img src="cert_cyber.png" alt="Certification 4">
-        </div>
-    </div>
-
-    <script>
-        function openModal() {
-            document.getElementById("certModal").style.display = "flex";
+   <script>
+        let slideIndex = 0;
+        function moveSlide(n) {
+            let slides = document.querySelectorAll(".cert-slide");
+            slideIndex += n;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }
+            document.querySelector(".certification-images").style.transform = `translateX(-${slideIndex * 100}%)`;
         }
-        function closeModal() {
-            document.getElementById("certModal").style.display = "none";
-        }
+        document.addEventListener("DOMContentLoaded", () => moveSlide(0));
     </script>
 </body>
 </html>
