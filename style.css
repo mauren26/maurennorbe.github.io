@@ -172,48 +172,82 @@ h2{
     font-size: var(--p-font);
 }
 .certifications {
-  position: relative; 
+    text-align: center;
+    margin-top: 20px;
 }
-.vertical-line {
-  width: 2px;
-  height: 100%;
-  background-color: #fff; 
-  position: absolute;
-  left: calc(20% - 1px); 
-  top: 0;
-  bottom: 0;
-}
+
 .certifications h3 {
-    position: absolute;
-    left: 200px;  
-    top: 4%;
-    transform: translateY(-50%);
-    margin: 0; 
-    padding: 0; 
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
-.certifications .certification-images img {
-    position: absolute;
-    left: 200px;
-    top: calc(20% - 100px); 
-    width: 300px;
-    height: 200px;
-    margin: 10px;
+
+.certification-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.certification-images img {
+    width: 150px;
+    height: auto;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
 }
 
-
-.certifications .certification-images img:first-child {
-    top: calc(60% - 250px); 
-}
-
-.certifications .certification-images img:last-child {
-    top: calc(50% + 50px); 
-}
-
-.certifications .certification-images img:hover {
+.certification-images img:hover {
     transform: scale(1.1);
 }
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: red;
+}
+
 .skills-section
 {
     padding-top: 30px;
