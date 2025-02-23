@@ -176,40 +176,32 @@ h2{
     margin-top: 20px;
 }
 
-.certification-slider {
+.certification-album {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             position: relative;
             width: 80%;
             margin: auto;
-            overflow: hidden;
         }
         .certification-images {
+            position: relative;
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            justify-content: center;
+            align-items: center;
         }
         .cert-slide {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: auto;
+            position: absolute;
+            width: 250px;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.5s ease-in-out;
         }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-        .prev { left: 10px; }
-        .next { right: 10px; }
+        .cert-slide:nth-child(1) { transform: rotate(-10deg) translateX(-20px); }
+        .cert-slide:nth-child(2) { transform: rotate(-5deg) translateX(-10px); }
+        .cert-slide:nth-child(3) { transform: rotate(0deg); }
+        .cert-slide:nth-child(4) { transform: rotate(5deg) translateX(10px); }
 
 .skills-section
 {
